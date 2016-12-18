@@ -3764,17 +3764,17 @@
     },
     {
         "name": "acacha/helpers",
-        "version": "0.1.0",
-        "version_normalized": "0.1.0.0",
+        "version": "0.1.1",
+        "version_normalized": "0.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/acacha/helpers.git",
-            "reference": "2628bc8ede26fc3fd52bdd5c333cf2bb911a5945"
+            "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acacha/helpers/zipball/2628bc8ede26fc3fd52bdd5c333cf2bb911a5945",
-            "reference": "2628bc8ede26fc3fd52bdd5c333cf2bb911a5945",
+            "url": "https://api.github.com/repos/acacha/helpers/zipball/b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
+            "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
             "shasum": ""
         },
         "require": {
@@ -3784,7 +3784,7 @@
             "phpunit/phpunit": "~4.0||~5.0",
             "squizlabs/php_codesniffer": "^2.3"
         },
-        "time": "2016-12-07 14:12:12",
+        "time": "2016-12-18 17:03:34",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3819,17 +3819,17 @@
     },
     {
         "name": "acacha/admin-lte-template-laravel",
-        "version": "3.2.2",
-        "version_normalized": "3.2.2.0",
+        "version": "3.3.0",
+        "version_normalized": "3.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/acacha/adminlte-laravel.git",
-            "reference": "d6c0d32ea8131868c5328f3c2ed04ab947db0258"
+            "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/d6c0d32ea8131868c5328f3c2ed04ab947db0258",
-            "reference": "d6c0d32ea8131868c5328f3c2ed04ab947db0258",
+            "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
+            "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
             "shasum": ""
         },
         "require": {
@@ -3845,7 +3845,7 @@
             "phpunit/phpunit": "~4.0||~5.0",
             "squizlabs/php_codesniffer": "^2.3"
         },
-        "time": "2016-12-16 12:00:24",
+        "time": "2016-12-18 16:49:50",
         "type": "package",
         "extra": {
             "branch-alias": {

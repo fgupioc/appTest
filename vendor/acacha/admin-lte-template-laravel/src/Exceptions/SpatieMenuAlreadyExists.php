@@ -5,7 +5,7 @@ namespace Acacha\AdminLTETemplateLaravel\Exceptions;
 /**
  * Class SpatieMenuAlreadyExists.
  *
- * @package Acacha\Llum\Filesystem
+ * @package Acacha\AdminLTETemplateLaravel\Exceptions
  */
 class SpatieMenuAlreadyExists extends \Exception
 {
