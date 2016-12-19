@@ -16,7 +16,9 @@ class NoticiaController extends Controller
 	}
 
     public function store(NoticiaRequest $request){  
-    	$url =$this->subir_imagen($request->file('imagen'));
+        if($request->file('imagen')!=null)
+    	   $url =$this->subir_imagen($request->file('imagen'));
+        
 	  	noticia::create([ 
             'titulo' =>	$request['titulo'],
             'descripcion' =>  $request['descripcion'], 

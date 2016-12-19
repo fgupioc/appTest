@@ -54,8 +54,7 @@ class CategoryController extends Controller
         $categoria = Category::find($id); 
         
     	$obj['name'] = $request['nombre'];
-        $obj['description'] =  $request['descripcion'];
-        $obj['condition'] =  $request['condicion'];
+        $obj['description'] =  $request['descripcion']; 
         $categoria->fill($obj);
         $categoria->save();
     	Flash::success("Se edito con exito");
