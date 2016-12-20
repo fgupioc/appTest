@@ -18,7 +18,9 @@ class ArticleController extends Controller
     public function index(Request $request)
     {
         $query = trim($request['buscar']);
-        $articulos = DB::table('articles as a')->join('categories as c', 'a.category_id', '=', 'c.id')->select('a.id', 'c.id as categoria_id', 'a.code', 'a.name', 'a.stock', 'a.description', 'a.image', 'a.state', 'c.name as categoria')->where('a.name', 'LIKE', '%' . $query . '%')->orderBY('a.id', 'desc')->paginate(7);
+        $articulos = DB::table('articles as a')->join('categories as c', 'a.category_id', '=', 'c.id')
+        ->select('a.id', 'c.id as categoria_id', 'a.code', 'a.name', 'a.stock', 'a.description', 'a.image', 'a.state', 'c.name as categoria')
+        ->where('a.name', 'LIKE', '%' . $query . '%')->orderBY('a.id', 'desc')->paginate(7);
         return view('almacen.articulo.index', compact('query', 'articulos'));
     }
 

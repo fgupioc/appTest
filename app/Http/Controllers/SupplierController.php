@@ -2,30 +2,30 @@
 
 namespace appTest\Http\Controllers;
 
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 use appTest\Http\Requests\CustomerRequest;
 use appTest\models\Customer;
 use Laracasts\Flash\Flash;
 use Storage;
 
-class CustomerController extends Controller
-{
+class SupplierController extends Controller
+{ 
     public function index(Request $request)
     {
         $query = trim($request['buscar']);
-        $clientes = Customer::where('type_person','=','Cliente')->where('name', 'LIKE', '%' . $query . '%')->orderBy('id', 'desc')->paginate(7);
-        return view('almacen.cliente.index', compact('query', 'clientes'));
+        $proveedores = Customer::where('type_person','=','Proveedor')->where('name', 'LIKE', '%' . $query . '%')->orderBy('id', 'desc')->paginate(7);
+        return view('almacen.proveedor.index', compact('query', 'proveedores'));
     }
- 
+
     public function create()
     {
-        return view('almacen.cliente.crear');
+        return view('almacen.proveedor.crear');
     }
- 
+
     public function store(CustomerRequest $request)
     {
         Customer::create([
-            'type_person' => 'Cliente',
+            'type_person' => 'Proveedor',
             'name' => $request['nombre'],
             'type_document' => $request['tipo_doc'],
             'num_document' => $request['num_doc'],
@@ -34,20 +34,20 @@ class CustomerController extends Controller
             'email' =>  $request['email'],
         ]);
         Flash::success("Se ha creado con exito");
-        return redirect()->route('clienteHome');
+        return redirect()->route('proveedorHome');
     }
-     
+
     public function show($id)
     {
         //
     }
- 
+
     public function edit($id)
     {
-        $cliente = Customer::find($id); 
-        return view('almacen.cliente.editar', compact('cliente'));
+        $proveedor = Customer::find($id);
+        return view('almacen.proveedor.editar', compact('proveedor'));
     }
- 
+
     public function update(CustomerRequest $request, $id)
     {
         $cliente = Customer::find($id);
@@ -60,9 +60,9 @@ class CustomerController extends Controller
         $cliente->fill($obj);
         $cliente->save();
         Flash::success("Se edito con exito");
-        return redirect()->route('clienteHome');
+        return redirect()->route('proveedorHome');
     }
-    
+
     public function destroy($id)
     {
         //

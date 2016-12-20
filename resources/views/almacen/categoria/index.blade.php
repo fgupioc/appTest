@@ -37,7 +37,7 @@
 						     	<td>{{$categoria->description}}</td>
 							      <td>
 							      	<a  href="{{route('categoriaActualizar',$categoria->id)}}" class="btn btn-warning">Modificar</a> 
-							      	<a  href="{{route('categoriaDestroy',$categoria->id)}}" class="btn btn-primary">Aceptar</a>                        
+							      	<a  href="{{route('categoriaDestroy',$categoria->id)}}" class="btn btn-primary">Eliminar</a>
 	                            	<!--a  href="" data-target="#modal_delete_{{$categoria->id}}" data-toggle="modal" class="btn btn-danger">Eliminar</a-->
 							      </td>
 						    </tr>
