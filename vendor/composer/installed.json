@@ -2985,71 +2985,6 @@
         ]
     },
     {
-        "name": "phpunit/php-code-coverage",
-        "version": "4.0.3",
-        "version_normalized": "4.0.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-            "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/903fd6318d0a90b4770a009ff73e4a4e9c437929",
-            "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^5.6 || ^7.0",
-            "phpunit/php-file-iterator": "~1.3",
-            "phpunit/php-text-template": "~1.2",
-            "phpunit/php-token-stream": "^1.4.2",
-            "sebastian/code-unit-reverse-lookup": "~1.0",
-            "sebastian/environment": "^1.3.2 || ^2.0",
-            "sebastian/version": "~1.0|~2.0"
-        },
-        "require-dev": {
-            "ext-xdebug": ">=2.1.4",
-            "phpunit/phpunit": "^5.4"
-        },
-        "suggest": {
-            "ext-dom": "*",
-            "ext-xdebug": ">=2.4.0",
-            "ext-xmlwriter": "*"
-        },
-        "time": "2016-11-28 16:00:31",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "4.0.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "role": "lead"
-            }
-        ],
-        "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
-        "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
-        "keywords": [
-            "coverage",
-            "testing",
-            "xunit"
-        ]
-    },
-    {
         "name": "webmozart/assert",
         "version": "1.2.0",
         "version_normalized": "1.2.0.0",
@@ -3764,17 +3699,17 @@
     },
     {
         "name": "acacha/helpers",
-        "version": "0.1.1",
-        "version_normalized": "0.1.1.0",
+        "version": "0.1.2",
+        "version_normalized": "0.1.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/acacha/helpers.git",
-            "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2"
+            "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acacha/helpers/zipball/b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
-            "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
+            "url": "https://api.github.com/repos/acacha/helpers/zipball/35a60fe05d8007a77833b530479daa7ab7e5794f",
+            "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f",
             "shasum": ""
         },
         "require": {
@@ -3784,7 +3719,7 @@
             "phpunit/phpunit": "~4.0||~5.0",
             "squizlabs/php_codesniffer": "^2.3"
         },
-        "time": "2016-12-18 17:03:34",
+        "time": "2016-12-19 11:05:08",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3819,17 +3754,17 @@
     },
     {
         "name": "acacha/admin-lte-template-laravel",
-        "version": "3.3.0",
-        "version_normalized": "3.3.0.0",
+        "version": "3.3.2",
+        "version_normalized": "3.3.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/acacha/adminlte-laravel.git",
-            "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98"
+            "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
-            "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
+            "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/24cdb0a338133c7de39c7c902c011c8e03a9b447",
+            "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447",
             "shasum": ""
         },
         "require": {
@@ -3845,7 +3780,7 @@
             "phpunit/phpunit": "~4.0||~5.0",
             "squizlabs/php_codesniffer": "^2.3"
         },
-        "time": "2016-12-18 16:49:50",
+        "time": "2016-12-19 13:23:04",
         "type": "package",
         "extra": {
             "branch-alias": {
@@ -3881,6 +3816,71 @@
             "laravel",
             "template",
             "theme"
+        ]
+    },
+    {
+        "name": "phpunit/php-code-coverage",
+        "version": "4.0.4",
+        "version_normalized": "4.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
+            "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+            "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^5.6 || ^7.0",
+            "phpunit/php-file-iterator": "~1.3",
+            "phpunit/php-text-template": "~1.2",
+            "phpunit/php-token-stream": "^1.4.2",
+            "sebastian/code-unit-reverse-lookup": "~1.0",
+            "sebastian/environment": "^1.3.2 || ^2.0",
+            "sebastian/version": "~1.0|~2.0"
+        },
+        "require-dev": {
+            "ext-xdebug": ">=2.1.4",
+            "phpunit/phpunit": "^5.4"
+        },
+        "suggest": {
+            "ext-dom": "*",
+            "ext-xdebug": ">=2.4.0",
+            "ext-xmlwriter": "*"
+        },
+        "time": "2016-12-20 15:22:42",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+        "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+        "keywords": [
+            "coverage",
+            "testing",
+            "xunit"
         ]
     }
 ]

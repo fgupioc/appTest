@@ -25,7 +25,7 @@ Route::post('update/{id}',['as'=>'updateNoticia','uses'=>'NoticiaController@upda
 Route::get('eliminar/{id}',['as'=>'eliminarNoticia','uses'=>'NoticiaController@eliminar']);
 
 //web
-Route::get('admin/categoria/lista',['as'=>'categoriaHome','uses'=>'CategoryController@index']);
+Route::get('admin/categoria',['as'=>'categoriaHome','uses'=>'CategoryController@index']);
 Route::get('admin/categoria/crear',['as'=>'categoriaCrear','uses'=>'CategoryController@create']);
 Route::post('admin/categoria/store',['as'=>'categoriaStore','uses'=>'CategoryController@store']);
 Route::get('admin/categoria/actualizar/{id}',['as'=>'categoriaActualizar','uses'=>'CategoryController@edit']);
@@ -33,9 +33,33 @@ Route::post('admin/categoria/update/{id}',['as'=>'categoriaUpdate','uses'=>'Cate
 Route::get('admin/categoria/destroy/{id}',['as'=>'categoriaDestroy','uses'=>'CategoryController@destroy']);
 
 //articulo
-Route::get('admin/articulo/lista',['as'=>'articuloHome','uses'=>'ArticleController@index']);
+Route::get('admin/articulo',['as'=>'articuloHome','uses'=>'ArticleController@index']);
 Route::get('admin/articulo/crear',['as'=>'articuloCrear','uses'=>'ArticleController@create']);
 Route::post('admin/articulo/store',['as'=>'articuloStore','uses'=>'ArticleController@store']);
 Route::get('admin/articulo/actualizar/{id}',['as'=>'articuloActualizar','uses'=>'ArticleController@edit']);
 Route::post('admin/articulo/update/{id}',['as'=>'articuloUpdate','uses'=>'ArticleController@update']);
 Route::get('admin/articulo/destroy/{id}',['as'=>'articuloDestroy','uses'=>'ArticleController@destroy']);
+
+//articulo
+Route::get('admin/cliente',['as'=>'clienteHome','uses'=>'CustomerController@index']);
+Route::get('admin/cliente/crear',['as'=>'clienteCrear','uses'=>'CustomerController@create']);
+Route::post('admin/cliente/store',['as'=>'clienteStore','uses'=>'CustomerController@store']);
+Route::get('admin/cliente/actualizar/{id}',['as'=>'clienteActualizar','uses'=>'CustomerController@edit']);
+Route::post('admin/cliente/update/{id}',['as'=>'clienteUpdate','uses'=>'CustomerController@update']);
+Route::get('admin/cliente/destroy/{id}',['as'=>'clienteDestroy','uses'=>'CustomerController@destroy']);
+ 
+Route::get('admin/proveedor',['as'=>'proveedorHome','uses'=>'SupplierController@index']);
+Route::get('admin/proveedor/crear',['as'=>'proveedorCrear','uses'=>'SupplierController@create']);
+Route::post('admin/proveedor/store',['as'=>'proveedorStore','uses'=>'SupplierController@store']);
+Route::get('admin/proveedor/actualizar/{id}',['as'=>'proveedorActualizar','uses'=>'SupplierController@edit']);
+Route::post('admin/proveedor/update/{id}',['as'=>'proveedorUpdate','uses'=>'SupplierController@update']);
+Route::get('admin/proveedor/destroy/{id}',['as'=>'proveedorDestroy','uses'=>'SupplierController@destroy']);
+
+//articulo
+Route::get('admin/ingreso',['as'=>'ingresoHome','uses'=>'EntryController@index']);
+Route::get('admin/ingreso/crear',['as'=>'ingresoCrear','uses'=>'EntryController@create']);
+Route::post('admin/ingreso/store',['as'=>'ingresoStore','uses'=>'EntryController@store']);
+Route::get('admin/ingreso/actualizar/{id}',['as'=>'ingresoActualizar','uses'=>'EntryController@edit']);
+Route::get('admin/ingreso/detalle/{id}',['as'=>'ingresoMostrar','uses'=>'EntryController@show']);
+Route::post('admin/ingreso/update/{id}',['as'=>'ingresoUpdate','uses'=>'EntryController@update']);
+Route::get('admin/ingreso/destroy/{id}',['as'=>'ingresoDestroy','uses'=>'EntryController@destroy']);

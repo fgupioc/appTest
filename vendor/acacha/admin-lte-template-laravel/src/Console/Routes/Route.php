@@ -8,7 +8,7 @@ use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 /**
  * Class Route.
  *
- * @package Acacha\AdminLTETemplateLaravel\Console
+ * @package Acacha\AdminLTETemplateLaravel\Console\Routes
  */
 abstract class Route implements GeneratesCode
 {

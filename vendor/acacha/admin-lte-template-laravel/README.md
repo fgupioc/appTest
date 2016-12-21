@@ -56,7 +56,10 @@ This packages use (no need to install):
 * [Laravel](http://laravel.com/)
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
-* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users.
+* [Acacha/user](https://github.com/acacha/user): providing boosted Laravel Users. This could be optional through configuration.
+* [acacha/helpers](https://github.com/acacha/helpers) : Extra helpers for Laravel provided by acacha.
+* [creativeorange/gravatar](https://github.com/creativeorange/gravatar): Gravatar support for user's profile images. This could be optional through configuration.
+* [league/flysystem](https://github.com/thephpleague/flysystem) : Filesystem support.
 * [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
 * Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
@@ -77,6 +80,10 @@ export PATH=${PATH}:~/.composer/vendor/bin
 ```
 
 to your ~/.bashrc file
+
+## Optional requirements
+* [Laravel menu](https://github.com/spatie/laravel-menu): only used with command adminlte:menu that replaces default adminlte menu with a menu with spatie/laravel-menu support.
+
 
 ## Llum package
 
@@ -257,7 +264,29 @@ Adminlte-laravel supports global recognized avatar (http://gravatar.com) using p
 
 # Artisan Commands
 
-## adminlte:route | adminlte-laravel:route
+## make:view
+
+This commands adds a view to **resources/views** folder using default adminlte layout:
+
+```bash
+php artisan make:view about
+```
+
+## make:menu
+
+This commands adds a menu entry to file **config/menu.php**:
+
+```bash
+php artisan make:menu link menuname
+```
+
+Example:
+
+```bash
+php artisan make:menu /contact
+```
+
+## make:route
 
 This commands adds a route to routes file using:
 

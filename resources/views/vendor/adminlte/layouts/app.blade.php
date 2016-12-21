@@ -40,6 +40,7 @@
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
+ @yield('script')
 
 </body>
 </html>

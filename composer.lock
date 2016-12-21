@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e448b6c2f14ad207e02f577e143faa87",
-    "content-hash": "a5f0ad1031ef4859ad3274e953ae5797",
+    "hash": "6a60cc4d47104f83c9320b8758bcbd01",
+    "content-hash": "22ab3eb7c7e1e70a69299e049e646d30",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
-            "version": "3.3.0",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acacha/adminlte-laravel.git",
-                "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98"
+                "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
-                "reference": "06eaec828d99a9be6d0ea8a35bf4c5e67bf73b98",
+                "url": "https://api.github.com/repos/acacha/adminlte-laravel/zipball/24cdb0a338133c7de39c7c902c011c8e03a9b447",
+                "reference": "24cdb0a338133c7de39c7c902c011c8e03a9b447",
                 "shasum": ""
             },
             "require": {
@@ -69,20 +69,20 @@
                 "template",
                 "theme"
             ],
-            "time": "2016-12-18 16:49:50"
+            "time": "2016-12-19 13:23:04"
         },
         {
             "name": "acacha/helpers",
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/acacha/helpers.git",
-                "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2"
+                "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/acacha/helpers/zipball/b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
-                "reference": "b3eeb17c3ddac7d44d8de0af712cf90178e04bc2",
+                "url": "https://api.github.com/repos/acacha/helpers/zipball/35a60fe05d8007a77833b530479daa7ab7e5794f",
+                "reference": "35a60fe05d8007a77833b530479daa7ab7e5794f",
                 "shasum": ""
             },
             "require": {
@@ -122,7 +122,7 @@
                 "helpers",
                 "laravel"
             ],
-            "time": "2016-12-18 17:03:34"
+            "time": "2016-12-19 11:05:08"
         },
         {
             "name": "acacha/user",
@@ -2649,16 +2649,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929"
+                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/903fd6318d0a90b4770a009ff73e4a4e9c437929",
-                "reference": "903fd6318d0a90b4770a009ff73e4a4e9c437929",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
                 "shasum": ""
             },
             "require": {
@@ -2708,7 +2708,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-11-28 16:00:31"
+            "time": "2016-12-20 15:22:42"
         },
         {
             "name": "phpunit/php-file-iterator",

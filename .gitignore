@@ -1,7 +1,9 @@
 
+.gitignore
 .idea
 /bootstrap/compiled.php
 /vendor
+/db
 composer.phar
 composer.lock
 .env
