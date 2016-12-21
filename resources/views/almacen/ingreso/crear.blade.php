@@ -48,7 +48,7 @@
 				    <div class="form-group"> 
 				      {!!Form::label('text', 'Numero', ['class' => 'control-label col-sm-2']);!!}
 				      <div class="col-sm-10"> 
-				         {!!Form::text('num_doc',null,['class'=>'form-control','id'=>'form_control_1','placeholder'=>'Ingresa el Stock Inicial '])!!}
+				         {!!Form::text('num_doc',null,['class'=>'form-control','id'=>'form_control_1','placeholder'=>'Ingresa el Numero de documento '])!!}
 				      </div>
 				    </div> 
 				    </div>

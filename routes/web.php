@@ -60,5 +60,6 @@ Route::get('admin/ingreso',['as'=>'ingresoHome','uses'=>'EntryController@index']
 Route::get('admin/ingreso/crear',['as'=>'ingresoCrear','uses'=>'EntryController@create']);
 Route::post('admin/ingreso/store',['as'=>'ingresoStore','uses'=>'EntryController@store']);
 Route::get('admin/ingreso/actualizar/{id}',['as'=>'ingresoActualizar','uses'=>'EntryController@edit']);
+Route::get('admin/ingreso/detalle/{id}',['as'=>'ingresoMostrar','uses'=>'EntryController@show']);
 Route::post('admin/ingreso/update/{id}',['as'=>'ingresoUpdate','uses'=>'EntryController@update']);
 Route::get('admin/ingreso/destroy/{id}',['as'=>'ingresoDestroy','uses'=>'EntryController@destroy']);

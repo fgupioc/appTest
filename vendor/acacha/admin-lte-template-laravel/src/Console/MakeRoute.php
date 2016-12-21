@@ -9,6 +9,7 @@ use Acacha\AdminLTETemplateLaravel\Console\Routes\ControllerRoute;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\GeneratesCode;
 use Acacha\AdminLTETemplateLaravel\Console\Routes\RegularRoute;
 use Acacha\AdminLTETemplateLaravel\Exceptions\RouteTypeNotValid;
+use Acacha\AdminLTETemplateLaravel\Exceptions\SpatieMenuDoesNotExists;
 use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Router;
@@ -17,11 +18,11 @@ use Route;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 /**
- * Class AdminLTERoute.
+ * Class MakeRoute.
  */
-class AdminLTERoute extends Command
+class MakeRoute extends Command
 {
-    use HasUsername, HasEmail, Controller;
+    use Controller, CreatesModels;
 
     /**
      * Path to web routes file.
@@ -63,9 +64,10 @@ class AdminLTERoute extends Command
     /**
      * The name and signature of the console command.
      */
-    protected $signature = 'adminlte-laravel:route {link: The route link} {action? : View or controller to create} 
+    protected $signature = 'make:route {link : The route link} {action? : View or controller to create} 
     {--t|type=regular : Type of route to create (regular,controller,resource)} {--m|method=get : HTTP method} 
-    {--api : Route is an api route} {--a|createaction : Create view or controller after route}';
+    {--api : Route is an api route} {--a|createaction : Create view or controller after route}
+    {--menu : Create also menu entry using make:menu command} {--model : Create also a model using command make:model}';
 
     /**
      * The console command description.
@@ -97,7 +99,7 @@ class AdminLTERoute extends Command
         $tmpfile = $this->createTmpFileWithRoute();
         $path = $this->getPath($tmpfile);
         add_file_into_file($this->mountpoint(), $path, $dstFile = $this->destinationFile());
-        $this->info('Route ' . $link . ' added to ' .  $dstFile . '.');
+        $this->info('Route ' . undot_path($link) . ' added to ' .  $dstFile . '.');
         $this->postActions();
     }
 
@@ -248,7 +250,7 @@ class AdminLTERoute extends Command
         /** @var GeneratesCode $route */
         $route = new $class($this->compiler, $this->filesystem);
         $route->setReplacements([
-            $this->argument('link'),
+            undot_path($this->argument('link')),
             $this->action(),
             $this->method()
         ]);
@@ -278,7 +280,10 @@ class AdminLTERoute extends Command
         if ($this->argument('action') != null) {
             return $this->argument('action');
         }
-        return $this->argument('link') . 'Controller';
+        if (strtolower($this->option('type')) != 'regular') {
+            return $this->argument('link') . 'Controller';
+        }
+        return $this->argument('link');
     }
 
     /**
@@ -318,6 +323,43 @@ class AdminLTERoute extends Command
         if ($this->option('createaction') != null) {
             $this->createAction();
         }
+        if ($this->option('menu') != null) {
+            $this->createMenu();
+        }
+        if ($this->option('model') != null) {
+            $this->createModel($this->argument('link'));
+        }
+    }
+
+    /**
+     * Create menu.
+     */
+    protected function createMenu()
+    {
+        try {
+            $this->warnIfSpatieMenuIsNotInstalled();
+        } catch (\Exception $e) {
+            //Skip installation of menu
+            $this->error($e->getMessage());
+            return;
+        }
+        Artisan::call('make:menu', [
+            'link' => $link = undot_path($this->argument('link')),
+            'name' => ucfirst($link),
+        ]);
+        $this->info('Menu entry ' . $link .' added to config/menu.php file.');
+    }
+
+    /**
+     * Warn if spatie menu ins not installed.
+     *
+     * @throws SpatieMenuDoesNotExists
+     */
+    protected function warnIfSpatieMenuIsNotInstalled()
+    {
+        if (!(app()->getProvider('Spatie\Menu\Laravel\MenuServiceProvider'))) {
+            throw new SpatieMenuDoesNotExists();
+        }
     }
 
     /**
@@ -336,13 +378,18 @@ class AdminLTERoute extends Command
 
     /**
      * Create View.
+     *
+     * @param null $name
      */
-    protected function createView()
+    protected function createView($name = null)
     {
+        if ($name == null) {
+            $name = $this->action();
+        }
         Artisan::call('make:view', [
-            'name' => $this->action()
+            'name' => $name
         ]);
-        $this->info('View ' . $this->action() .'.blade.php created.');
+        $this->info('View ' . undot_path($name) .'.blade.php created.');
     }
 
     /**
@@ -355,6 +402,7 @@ class AdminLTERoute extends Command
         ]);
         $this->addMethodToController($controller, $this->controllerMethod($this->action()));
         $this->info('Controller ' . $controller .' created.');
+        $this->createView($this->argument('link'));
     }
 
     /**
@@ -367,6 +415,7 @@ class AdminLTERoute extends Command
             '--resource' => true
         ]);
         $this->info('Resource Controller ' . $controller .' created.');
+        $this->createView($this->argument('link'));
     }
 
     /**
@@ -406,7 +455,8 @@ class AdminLTERoute extends Command
         return $this->compiler->compile(
             $this->filesystem->get($this->getMethodStubPath()),
             [
-                'METHOD' => $controllerMethod
+                'METHOD' => $controllerMethod,
+                'VIEW' => $this->argument('link')
             ]
         );
     }

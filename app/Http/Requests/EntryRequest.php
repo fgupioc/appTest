@@ -23,14 +23,13 @@ class EntryRequest extends FormRequest
      */
     public function rules()
     {
-        return [ 
-            'proveedor_id'=>'required',
+        return [  
             'serie_doc'=>'required',
             'num_doc'=>'required',
-            'impuesto'=>'required',
-            'cantidad'=>'required|numeric',
-            'precio_comp'=>'required',
-            'precio_vent'=>'required',
+            'igv'=>'required',
+            'cantidad'=>'required',
+            'compra'=>'required',
+            'venta'=>'required',
         ];
     }
 }

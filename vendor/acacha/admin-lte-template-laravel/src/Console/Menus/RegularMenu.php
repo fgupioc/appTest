@@ -1,16 +1,16 @@
 <?php
 
-namespace Acacha\AdminLTETemplateLaravel\Console\Routes;
+namespace Acacha\AdminLTETemplateLaravel\Console\Menus;
 
 use Acacha\AdminLTETemplateLaravel\Compiler\StubFileCompiler;
 use Acacha\AdminLTETemplateLaravel\Filesystem\Filesystem;
 
 /**
- * Class RegularRoute.
+ * Class RegularMenu.
  *
- * @package Acacha\AdminLTETemplateLaravel\Console\Routes
+ * @package Acacha\AdminLTETemplateLaravel\Console
  */
-class RegularRoute extends Route
+class RegularMenu extends Menu
 {
 
     /**
@@ -31,7 +31,7 @@ class RegularRoute extends Route
      */
     protected function getStubPath()
     {
-        return __DIR__ . '/../stubs/route.stub';
+        return __DIR__ . '/../stubs/menu.stub';
     }
 
     /**
@@ -40,10 +40,8 @@ class RegularRoute extends Route
     protected function obtainReplacements()
     {
         return [
-            'ROUTE_LINK' => $link = $this->getReplacements()[0],
-            'ROUTE_VIEW' => $this->getReplacements()[1],
-            'ROUTE_METHOD' => $this->getReplacements()[2],
-            'ROUTE_NAME' => dot_path($link),
+            'MENU_LINK' => $this->getReplacements()[0],
+            'MENU_NAME' => $this->getReplacements()[1]
         ];
     }
 }
