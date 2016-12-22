@@ -45,7 +45,7 @@ class EntryController extends Controller
         return view('almacen.ingreso.crear',compact('proveedores','articulos'));
     }
  
-    public function store(Request $request)
+    public function store(EntryRequest $request)
     {    
         try{ 
             $fecha = Carbon::now('America/Lima')->toDateTimeString();
