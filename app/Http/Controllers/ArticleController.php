@@ -8,15 +8,15 @@ use Illuminate\Support\Facades\Input;
 use appTest\Http\Requests\ArticleRequest;
 use appTest\models\Article;
 use appTest\models\Category;
+use appTest\User;
 use Illuminate\Support\Facades\DB;
 use Laracasts\Flash\Flash;
 use Storage;
 
-
 class ArticleController extends Controller
 {
     public function index(Request $request)
-    {
+    {  
         $query = trim($request['buscar']);
         $articulos = DB::table('articles as a')->join('categories as c', 'a.category_id', '=', 'c.id')
         ->select('a.id', 'c.id as categoria_id', 'a.code', 'a.name', 'a.stock', 'a.description', 'a.image', 'a.state', 'c.name as categoria')

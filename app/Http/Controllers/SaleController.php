@@ -10,8 +10,8 @@ use Storage;
 use appTest\models\Customer;
 use appTest\models\Sale;
 use appTest\models\SaleDetails;
-use appTest\Http\Requests\SaleRequest;
-
+use appTest\Http\Requests\SaleRequest; 
+use Illuminate\Support\Facades\Auth;
 class SaleController extends Controller
 {
     public function index(Request $request)
@@ -43,10 +43,11 @@ class SaleController extends Controller
     {       
         try{ 
             $fecha = Carbon::now('America/Lima')->toDateTimeString();
+            $user_id = Auth::user()->id;
             DB::beginTransaction();
             $objventa = Sale::create([
                 'customer_id' => $request['cliente_id'],
-                'user_id' => '1',
+                'user_id' => $user_id,
                 'type_document' => $request['tipo_doc'],
                 'serie_document' => $request['serie_doc'],
                 'num_document' => $request['num_doc'],

@@ -9,4 +9,11 @@ class EntryDetails extends Model
     //`,
     public $timestamps = true;
     protected $fillable=['entry_id','article_id','quantity','price_buy', 'price_sale'];
+
+    public function Article(){
+    	return $this->belongsTo('appTest\models\Article');
+    }
+    public function entry(){
+    	return $this->belongsTo('appTest\models\Entry');
+    }
 }

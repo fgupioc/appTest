@@ -26,4 +26,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    //esta relacion es de muchos a muchos con la tabla typeadmin directamente 
+    //$user= User::find(1);
+    //$user->tipoAdmins->first()->name
+    public function tipoAdmins(){
+        return $this->belongsToMany('appTest\models\TypeAdmin')->withTimestamps();
+    }
+
+    //se relacioan con la tabla typeadminuser de uno a uno
+    //$user->typeAdminUser->typeAdmin->name
+    public function typeAdminUser(){  
+         return $this->hasone('appTest\models\TypeAdminUser');
+    }
+         
 }
